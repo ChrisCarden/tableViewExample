@@ -11,8 +11,6 @@ class FirstTableView: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet var tableView: UITableView!
     
-    let numbers = Array(1...20)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,28 +21,23 @@ class FirstTableView: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numbers.count
+        return fruits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        let number = numbers[indexPath.row]
-        cell.textLabel?.text = "\(number)"
-        cell.textLabel?.textColor = .white
-        
-        if number.isEven {
-            cell.contentView.backgroundColor = .red
-        } else {
-            cell.contentView.backgroundColor = .blue
-        }
-        
+        let fruit = fruits[indexPath.row]
+        cell.textLabel?.text = "\(fruit.name)"
+        cell.textLabel?.textColor = .black        
+        cell.contentView.backgroundColor = fruit.color
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
-        detailViewController.detailText = "\(numbers[indexPath.row].evenOrOdd().rawValue)"
+        detailViewController.detailText = "\(fruits[indexPath.row].pointyOrSmooth())"
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
@@ -56,11 +49,20 @@ class FirstTableView: UIViewController, UITableViewDelegate, UITableViewDataSour
 struct Fruit {
     let name: String
     let color: UIColor
-    let tastesGood: Bool
+    let texture: String
+    
+    func pointyOrSmooth() -> String {
+        var message = "*** Shouldn't appear"
+        if self.texture == "pointy" {
+            message = "Ouch!"
+        } else if self.texture == "smooth" {
+            message = "So smooth!"
+        }
+        return message
+    }
 }
 
-let apple = Fruit(name: "apple", color: .red, tastesGood: true)
-let pear = Fruit(name: "pear", color: .green, tastesGood: true)
-var fruits = [apple, pear]
-
-
+let apple = Fruit(name: "apple", color: .red, texture: "smooth")
+let pear = Fruit(name: "pear", color: .green, texture: "smooth")
+let pineapple = Fruit(name: "pineapple", color: .yellow, texture: "pointy")
+var fruits = [apple, pear, pineapple]
