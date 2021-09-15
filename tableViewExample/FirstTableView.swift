@@ -31,6 +31,7 @@ class FirstTableView: UIViewController, UITableViewDelegate, UITableViewDataSour
         // https://developer.apple.com/documentation/uikit/views_and_controls/table_views/configuring_the_cells_for_your_table
         // after you create your cell, set the title and image properties!
         let fruit = fruits[indexPath.row]
+        // Delete the properties you set on the old cell!
         cell.textLabel?.text = "\(fruit.name)"
         cell.textLabel?.textColor = .black        
         cell.contentView.backgroundColor = fruit.color
