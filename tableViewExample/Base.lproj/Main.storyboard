@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xDO-Rb-LhY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xDO-Rb-LhY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,6 +19,42 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VBv-DU-fg8">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FruitTableViewCell" rowHeight="139" id="SIf-hs-DW1" customClass="FruitTableViewCell" customModule="tableViewExample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="139"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SIf-hs-DW1" id="Iua-92-pPa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="139"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tb3-tK-ZOS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="tb3-tK-ZOS" secondAttribute="height" multiplier="1:1" id="ayZ-8J-Y2n"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlN-qF-Tdh">
+                                                    <rect key="frame" x="159" y="59" width="215" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="RlN-qF-Tdh" secondAttribute="trailing" constant="20" id="42X-Zh-yI8"/>
+                                                <constraint firstItem="RlN-qF-Tdh" firstAttribute="centerY" secondItem="Iua-92-pPa" secondAttribute="centerY" id="Hbh-tr-d9h"/>
+                                                <constraint firstItem="tb3-tK-ZOS" firstAttribute="top" secondItem="Iua-92-pPa" secondAttribute="top" id="Mdh-HL-KzP"/>
+                                                <constraint firstItem="tb3-tK-ZOS" firstAttribute="leading" secondItem="Iua-92-pPa" secondAttribute="leading" id="QM7-gc-QeA"/>
+                                                <constraint firstAttribute="bottom" secondItem="tb3-tK-ZOS" secondAttribute="bottom" id="oKM-XJ-s20"/>
+                                                <constraint firstItem="RlN-qF-Tdh" firstAttribute="leading" secondItem="tb3-tK-ZOS" secondAttribute="trailing" constant="20" id="qJK-uA-Psi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fruitImageView" destination="tb3-tK-ZOS" id="B9D-BN-nzf"/>
+                                            <outlet property="fruitTitleLabel" destination="RlN-qF-Tdh" id="tac-Oh-IIL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
