@@ -15,6 +15,7 @@
 		63737F2A26E9520500260C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63737F2826E9520500260C79 /* LaunchScreen.storyboard */; };
 		63737F3426E9588500260C79 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63737F3326E9588500260C79 /* DetailViewController.swift */; };
 		63737F3726E95A7900260C79 /* Integer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63737F3626E95A7900260C79 /* Integer+Additions.swift */; };
+		63737F3C26F28FE500260C79 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63737F3B26F28FE500260C79 /* FruitTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		63737F2B26E9520500260C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63737F3326E9588500260C79 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		63737F3626E95A7900260C79 /* Integer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Integer+Additions.swift"; sourceTree = "<group>"; };
+		63737F3B26F28FE500260C79 /* FruitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				63737F2626E9520500260C79 /* Assets.xcassets */,
 				63737F2826E9520500260C79 /* LaunchScreen.storyboard */,
 				63737F2B26E9520500260C79 /* Info.plist */,
+				63737F3B26F28FE500260C79 /* FruitTableViewCell.swift */,
 			);
 			path = tableViewExample;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				63737F1E26E951FD00260C79 /* AppDelegate.swift in Sources */,
 				63737F2026E951FD00260C79 /* SceneDelegate.swift in Sources */,
 				63737F3726E95A7900260C79 /* Integer+Additions.swift in Sources */,
+				63737F3C26F28FE500260C79 /* FruitTableViewCell.swift in Sources */,
 				63737F3426E9588500260C79 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3BSK6499J;
 				INFOPLIST_FILE = tableViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -313,6 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3BSK6499J;
 				INFOPLIST_FILE = tableViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
