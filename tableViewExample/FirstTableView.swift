@@ -17,11 +17,22 @@ class FirstTableView: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(FruitTableViewCell.self, forCellReuseIdentifier: FruitTableViewCell.reuseIdentifier)
+        // Don't call this when cell is made in storyboard!!
+        //tableView.register(FruitTableViewCell.self, forCellReuseIdentifier: FruitTableViewCell.reuseIdentifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fruits.count
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        print("*** willDisplay!")
+        guard let fruitCell = cell as? FruitTableViewCell else {
+            return
+        }
+        
+        let fruit = fruits[indexPath.row]
+        fruitCell.fruit = fruit
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,6 +47,9 @@ class FirstTableView: UIViewController, UITableViewDelegate, UITableViewDataSour
         // cell.textLabel?.text = "\(fruit.name)"
         // cell.textLabel?.textColor = .black
         // cell.contentView.backgroundColor = fruit.color
+        
+        let fruit = fruits[indexPath.row]
+        cell.configureView(for: fruit)
 
         return cell
     }
