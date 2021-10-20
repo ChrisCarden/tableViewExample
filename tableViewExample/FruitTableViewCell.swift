@@ -25,17 +25,22 @@ class FruitTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // call configureView here!
+        configureView()
     }
     
     // Why might we want to make this private?
     private func configureView() {
         // Set fruitTitle and image in here
+        self.fruitImage = apple.Img
+        self.fruitTitle = "apple"
         // Set the cell's accessoryType to "disclosureIndicator"
+        self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+        fruitImageView?.image = nil
+        fruitTitleLabel?.text = nil
         // clear out your title and image properties!
     }
 }
